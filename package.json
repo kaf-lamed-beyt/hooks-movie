@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html --open",
     "format": "prettier --write \"src/**/*.{js,jsx,html,scss,css}\" ",
     "lint": "eslint --quiet --fix \"src/**/*.{js,jsx} \""
   },
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "React-Hooks",
-    "APIs",
+    "movie-API",
     "Movies"
   ],
   "author": "Caleb Olojo",
