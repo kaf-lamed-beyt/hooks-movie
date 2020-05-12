@@ -28357,7 +28357,122 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/App.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Header;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header(props) {
+  return _react.default.createElement("header", {
+    className: "app__head"
+  }, _react.default.createElement("h2", null, props.text));
+}
+},{"react":"../node_modules/react/index.js"}],"components/Movies.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Movies;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * The `defaultMovieImage` variable
+ * is as a result of some movies gotten from the API do not have a placeholder image,
+ * so instead of rendering no images,
+ * I decided to render this, as the default one.
+ */
+var defaultMovieImage = 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg';
+
+function Movies(_ref) {
+  var movie = _ref.movie;
+  var poster = movie.poster === 'N/A' ? defaultMovieImage : movie.poster;
+  return _react.default.createElement("div", {
+    className: "movie__base box-shadow"
+  }, _react.default.createElement("h2", null, movie.Title), _react.default.createElement("div", {
+    className: "movie__img__desc"
+  }, _react.default.createElement("img", {
+    src: poster,
+    alt: "This movie's title is: ".concat(movie.title)
+  })), _react.default.createElement("p", null, "(", movie.Year, ")"));
+}
+},{"react":"../node_modules/react/index.js"}],"components/Search.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Search;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Search(props) {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      searchKeyword = _useState2[0],
+      setSearchKeyword = _useState2[1];
+
+  var handleSearchInput = function handleSearchInput(e) {
+    setSearchKeyword(e.target.value);
+  };
+  /*
+   * This function calls the `setSearchKeyword` state and
+   * sets it to an empty string,
+   * in turn clearing the search field
+   */
+
+
+  var resetSearchField = function resetSearchField() {
+    setSearchKeyword('');
+  };
+  /* When this is called by the button click, 
+  `e.preventDefault()` stops the browser from reloading,
+  and the function starts searchin for the kwyword provided by the user.
+  */
+
+
+  var startSearching = function startSearching(e) {
+    e.preventDefault();
+    props.search(searchKeyword);
+  };
+
+  return _react.default.createElement("form", {
+    className: "search__base"
+  }, _react.default.createElement("input", {
+    type: "text",
+    value: searchKeyword,
+    onChange: handleSearchInput
+  }), _react.default.createElement("button", {
+    onClick: startSearching
+  }, "Search \uD83D\uDD0D "));
+}
+},{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28365,16 +28480,96 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = App;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
+
+var _Header = _interopRequireDefault(require("./Header"));
+
+var _Movies = _interopRequireDefault(require("./Movies"));
+
+var _Search = _interopRequireDefault(require("./Search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// The Omdb movie API
+var movie_API_Endpoint = 'https://www.omdbapi.com/?s=man&apikey=4a3b711b';
+
 function App() {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      movies = _useState2[0],
+      setMovies = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errMessage = _useState4[0],
+      setErrMessage = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loader = _useState6[0],
+      setLoader = _useState6[1];
+
+  (0, _react.useEffect)(function () {
+    fetch(movie_API_Endpoint).then(function (response) {
+      return response.json();
+    }).then(function (jsonResponse) {
+      setMovies(jsonResponse.Search);
+      setLoader(false);
+    });
+  }, []);
+
+  var search = function search(searchKeyword) {
+    setLoader(true);
+    setErrMessage(null);
+    fetch("https://www.omdbapi.com/?s=".concat(searchKeyword, "&apikey=4a3b711b")).then(function (response) {
+      return response.json();
+    }).then(function (jsonResponse) {
+      if (jsonResponse.Response === 'True') {
+        setMovies(jsonResponse.Search);
+        setLoader(false);
+      } else {
+        setErrMessage(jsonResponse.Error);
+        setLoader(false);
+      }
+    });
+  };
+
   return _react.default.createElement("div", {
-    className: "app"
-  }, _react.default.createElement("h1", null, "Hello movies \uD83D\uDE06 "));
+    className: "app__base"
+  }, _react.default.createElement(_Header.default, {
+    text: "Hello movies \uD83D\uDE06 "
+  }), _react.default.createElement(_Search.default, {
+    search: search
+  }), _react.default.createElement("p", {
+    className: "movies__intro"
+  }, "Come, checkout some of these \uD83D\uDE00"), _react.default.createElement("div", {
+    className: "movies"
+  }, loader && !errMessage ? _react.default.createElement("span", null, "loading...") : errMessage ? _react.default.createElement("div", {
+    className: "errMessage"
+  }, errMessage) : movies.map(function (movie, index) {
+    return _react.default.createElement(_Movies.default, {
+      key: "".concat(index, "-").concat(movie.Title),
+      movie: movie
+    });
+  })));
 }
-},{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Header":"components/Header.js","./Movies":"components/Movies.js","./Search":"components/Search.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28416,7 +28611,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39433" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
