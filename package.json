@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
-    "format": "prettier --write \"src/**/*.{js,jsx,html,scss,css}\" ",
+    "format": "prettier \"src/**/*.{js,jsx,html,scss,css}\" ",
     "lint": "eslint --quiet --fix \"src/**/*.{js,jsx} \""
   },
   "repository": {
@@ -27,6 +27,7 @@
   "dependencies": {
     "node-sass": "^4.14.1",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

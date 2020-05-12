@@ -1,6 +1,6 @@
 import React from 'react'
 
-const App = () => {
+export default function App () {
     return (
         <div className="app">
             <h1>Hello movies 😆 </h1>
@@ -8,5 +8,4 @@ const App = () => {
     )
 }
 
-export default App
 
