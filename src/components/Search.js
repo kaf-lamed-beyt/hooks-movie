@@ -12,27 +12,40 @@ export default function Search(props) {
      * sets it to an empty string,
      * in turn clearing the search field
      */
-    const resetSearchField = () => {
+    const resetSearchField = (e) => {
+        e.preventDefault()
         setSearchKeyword('')
     }
 
-    /* When this is called by the button click, 
-    `e.preventDefault()` stops the browser from reloading,
-    and the function starts searchin for the kwyword provided by the user.
-    */
+    /* When this is called by the button click,
+     * `e.preventDefault()` stops the browser from reloading,
+     * and the function starts searching for the
+     * keyword(movie-title) provided by the user.
+     */
     const startSearching = (e) => {
         e.preventDefault()
         props.search(searchKeyword)
     }
 
     return (
-        <form className="search__base">
-            <input
-                type="text"
-                value={searchKeyword}
-                onChange={handleSearchInput}
-            />
-            <button onClick={startSearching}>Search 🔍 </button>
-        </form>
+        <div className="search__base">
+            <form className="search">
+                <input
+                    type="text"
+                    value={searchKeyword}
+                    onChange={handleSearchInput}
+                    className="form__control"
+                    placeholder="Type the name of the movie here."
+                />
+                <div className="search__controllers">
+                    <button className="btn" onClick={startSearching}>
+                        Search
+                    </button>
+                    <button className="btn" onClick={resetSearchField}>
+                        clear
+                    </button>
+                </div>
+            </form>
+        </div>
     )
 }

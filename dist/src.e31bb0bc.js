@@ -28448,13 +28448,15 @@ function Search(props) {
    */
 
 
-  var resetSearchField = function resetSearchField() {
+  var resetSearchField = function resetSearchField(e) {
+    e.preventDefault();
     setSearchKeyword('');
   };
-  /* When this is called by the button click, 
-  `e.preventDefault()` stops the browser from reloading,
-  and the function starts searchin for the kwyword provided by the user.
-  */
+  /* When this is called by the button click,
+   * `e.preventDefault()` stops the browser from reloading,
+   * and the function starts searching for the
+   * keyword(movie-title) provided by the user.
+   */
 
 
   var startSearching = function startSearching(e) {
@@ -28462,15 +28464,25 @@ function Search(props) {
     props.search(searchKeyword);
   };
 
-  return _react.default.createElement("form", {
+  return _react.default.createElement("div", {
     className: "search__base"
+  }, _react.default.createElement("form", {
+    className: "search"
   }, _react.default.createElement("input", {
     type: "text",
     value: searchKeyword,
-    onChange: handleSearchInput
-  }), _react.default.createElement("button", {
+    onChange: handleSearchInput,
+    className: "form__control",
+    placeholder: "Type the name of the movie here."
+  }), _react.default.createElement("div", {
+    className: "search__controllers"
+  }, _react.default.createElement("button", {
+    className: "btn",
     onClick: startSearching
-  }, "Search \uD83D\uDD0D "));
+  }, "Search"), _react.default.createElement("button", {
+    className: "btn",
+    onClick: resetSearchField
+  }, "clear"))));
 }
 },{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
@@ -28540,7 +28552,7 @@ function App() {
     fetch("https://www.omdbapi.com/?s=".concat(searchKeyword, "&apikey=4a3b711b")).then(function (response) {
       return response.json();
     }).then(function (jsonResponse) {
-      if (jsonResponse.Response === 'True') {
+      if (jsonResponse.Response === true) {
         setMovies(jsonResponse.Search);
         setLoader(false);
       } else {
@@ -28552,13 +28564,11 @@ function App() {
 
   return _react.default.createElement("div", {
     className: "app__base"
-  }, _react.default.createElement(_Header.default, {
-    text: "Hello movies \uD83D\uDE06 "
+  }, _react.default.createElement("div", null, _react.default.createElement(_Header.default, {
+    text: "Hello movies  \uD83D\uDE0E"
   }), _react.default.createElement(_Search.default, {
     search: search
-  }), _react.default.createElement("p", {
-    className: "movies__intro"
-  }, "Come, checkout some of these \uD83D\uDE00"), _react.default.createElement("div", {
+  })), _react.default.createElement("div", {
     className: "movies"
   }, loader && !errMessage ? _react.default.createElement("span", null, "loading...") : errMessage ? _react.default.createElement("div", {
     className: "errMessage"

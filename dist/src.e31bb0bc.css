@@ -1,2 +1,76 @@
+.btn {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: ghostwhite;
+  cursor: pointer;
+  font-weight: bold; }
+
+.search__controllers button {
+  margin: 1em 1.8em;
+  font-size: 1.5em; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  font-size: 10px;
+  background: #14dcd2; }
+
+.app__head {
+  width: 100%;
+  height: 55px;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  background: rgba(0, 0, 0, 0.65);
+  color: ghostwhite; }
+
+.search__base {
+  width: 800px;
+  height: 50px;
+  margin: 5em auto; }
+
+.form__control {
+  width: 100%;
+  height: 2.7em;
+  border-radius: 0.3em;
+  border: none;
+  outline: none;
+  font-size: 1.8em;
+  padding: 0.5em 0.5em; }
+
+.search__controllers {
+  display: flex;
+  justify-content: center;
+  padding: 1.5em 1.5em; }
+
+.movies__intro p {
+  margin-top: 3.5em auto; }
+
+.movies {
+  display: flex;
+  width: 1200px;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.095);
+  margin: 5em auto;
+  margin-top: 8%; }
+
+.movie__base {
+  background: rgba(0, 0, 0, 0.58);
+  color: ghostwhite;
+  font-size: 1.3em;
+  width: 400px;
+  height: 300px; }
+
+.box-shadow {
+  border-radius: 12px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); }
+
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

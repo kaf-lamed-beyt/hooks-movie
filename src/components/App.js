@@ -27,7 +27,7 @@ export default function App() {
         fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=4a3b711b`)
             .then((response) => response.json())
             .then((jsonResponse) => {
-                if (jsonResponse.Response === 'True') {
+                if (jsonResponse.Response === true) {
                     setMovies(jsonResponse.Search)
                     setLoader(false)
                 } else {
@@ -39,9 +39,10 @@ export default function App() {
 
     return (
         <div className="app__base">
-            <Header text="Hello movies 😆 " />
-            <Search search={search} />
-            <p className="movies__intro">Come, checkout some of these 😀</p>
+            <div>
+                <Header text="Hello movies  😎" />
+                <Search search={search} />
+            </div>
             <div className="movies">
                 {loader && !errMessage ? (
                     <span>loading...</span>
