@@ -64,7 +64,15 @@ body {
     padding: 1.5em 3.5em;
 }
 
+.movie__img__desc img {
+    width: 100%;
+    height: 135px;
+    margin-top: 2%;
+}
 
+.movie__base h2, p {
+    margin-top: 5%;
+}
 
 .movies .movie__base {
     margin: 2.8em 2em;
