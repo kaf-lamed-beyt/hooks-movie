@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx,html,scss,css}\" ",
     "lint": "eslint --quiet --fix \"src/**/*.{js,jsx} \""
   },
