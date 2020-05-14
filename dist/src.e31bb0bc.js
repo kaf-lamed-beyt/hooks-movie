@@ -28396,15 +28396,17 @@ var DEFAULT_IMAGE_PLACEHOLDER = 'https://m.media-amazon.com/images/M/MV5BMTczNTI
 
 function Movies(_ref) {
   var movie = _ref.movie;
-  var poster = movie.poster === false ? DEFAULT_IMAGE_PLACEHOLDER : movie.poster;
+  var poster = movie.Poster === 'N/A' ? DEFAULT_IMAGE_PLACEHOLDER : movie.Poster;
   return _react.default.createElement("div", {
     className: "movie__base box-shadow"
   }, _react.default.createElement("div", {
     className: "movie__img__desc"
   }, _react.default.createElement("img", {
     src: poster,
-    alt: "This movie's title is: ".concat(movie.title)
-  })), _react.default.createElement("h2", null, movie.Title), _react.default.createElement("p", null, "(", movie.Year, ")"));
+    alt: "This movie's title is: ".concat(movie.Title)
+  })), _react.default.createElement("div", {
+    className: "mov__description"
+  }, _react.default.createElement("h2", null, movie.Title), _react.default.createElement("p", null, "(", movie.Year, ")")));
 }
 },{"react":"../node_modules/react/index.js"}],"components/Search.js":[function(require,module,exports) {
 "use strict";
@@ -28621,7 +28623,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36447" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40145" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
