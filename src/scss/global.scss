@@ -81,7 +81,7 @@ body {
     background: rgba(0, 0, 0, 0.58);
     color: ghostwhite;
     font-size: 1.3em;
-    width: 320px;
+    width: 340px;
     height: 400px;
 }
 
@@ -95,6 +95,10 @@ body {
 
 
 @media only screen and (max-width: 576px) {
+    .app__head {
+        width: 100%;
+    }
+    
     .search__base {
         width: 100%;
         margin-left: 2%;

@@ -28396,7 +28396,7 @@ var DEFAULT_IMAGE_PLACEHOLDER = 'https://m.media-amazon.com/images/M/MV5BMTczNTI
 
 function Movies(_ref) {
   var movie = _ref.movie;
-  var poster = movie.poster === 'N/A' ? DEFAULT_IMAGE_PLACEHOLDER : movie.poster;
+  var poster = movie.poster === false ? DEFAULT_IMAGE_PLACEHOLDER : movie.poster;
   return _react.default.createElement("div", {
     className: "movie__base box-shadow"
   }, _react.default.createElement("div", {
@@ -28621,7 +28621,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39433" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36447" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
