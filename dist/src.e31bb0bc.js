@@ -28387,24 +28387,24 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The `defaultMovieImage` variable
+ * The `DEFAULT_IMAGE_PLACEHOLDER  ` variable
  * is as a result of some movies gotten from the API do not have a placeholder image,
  * so instead of rendering no images,
  * I decided to render this, as the default one.
  */
-var defaultMovieImage = 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg';
+var DEFAULT_IMAGE_PLACEHOLDER = 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg';
 
 function Movies(_ref) {
   var movie = _ref.movie;
-  var poster = movie.poster === 'N/A' ? defaultMovieImage : movie.poster;
+  var poster = movie.poster === 'N/A' ? DEFAULT_IMAGE_PLACEHOLDER : movie.poster;
   return _react.default.createElement("div", {
     className: "movie__base box-shadow"
-  }, _react.default.createElement("h2", null, movie.Title), _react.default.createElement("div", {
+  }, _react.default.createElement("div", {
     className: "movie__img__desc"
   }, _react.default.createElement("img", {
     src: poster,
     alt: "This movie's title is: ".concat(movie.title)
-  })), _react.default.createElement("p", null, "(", movie.Year, ")"));
+  })), _react.default.createElement("h2", null, movie.Title), _react.default.createElement("p", null, "(", movie.Year, ")"));
 }
 },{"react":"../node_modules/react/index.js"}],"components/Search.js":[function(require,module,exports) {
 "use strict";
@@ -28552,7 +28552,7 @@ function App() {
     fetch("https://www.omdbapi.com/?s=".concat(searchKeyword, "&apikey=4a3b711b")).then(function (response) {
       return response.json();
     }).then(function (jsonResponse) {
-      if (jsonResponse.Response === true) {
+      if (jsonResponse.Response === 'True') {
         setMovies(jsonResponse.Search);
         setLoader(false);
       } else {

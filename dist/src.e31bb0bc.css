@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap");
 .btn {
   width: 120px;
   height: 30px;
@@ -15,7 +16,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive; }
 
 html,
 body {
@@ -55,22 +57,40 @@ body {
 
 .movies {
   display: flex;
+  flex-wrap: wrap;
   width: 1200px;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.095);
   margin: 5em auto;
-  margin-top: 8%; }
+  margin-top: 8%;
+  padding: 1.5em 3.5em; }
+
+.movies .movie__base {
+  margin: 2.8em 2em; }
 
 .movie__base {
   background: rgba(0, 0, 0, 0.58);
   color: ghostwhite;
   font-size: 1.3em;
-  width: 400px;
-  height: 300px; }
+  width: 320px;
+  height: 400px; }
 
 .box-shadow {
   border-radius: 12px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); }
+
+@media only screen and (max-width: 576px) {
+  .search__base {
+    width: 100%;
+    margin-left: 2%; }
+  .form__control {
+    height: 35px;
+    width: 95%; }
+  .search__controllers {
+    margin: -.7em;
+    margin: auto; }
+  .movie__base {
+    margin: 0 auto; } }
 
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

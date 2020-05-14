@@ -27,7 +27,7 @@ export default function App() {
         fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=4a3b711b`)
             .then((response) => response.json())
             .then((jsonResponse) => {
-                if (jsonResponse.Response === true) {
+                if (jsonResponse.Response === 'True') {
                     setMovies(jsonResponse.Search)
                     setLoader(false)
                 } else {
