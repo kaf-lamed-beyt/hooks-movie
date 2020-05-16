@@ -99,7 +99,9 @@ p {
     margin-left: 2%; }
   .movies {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto; }
   .form__control {
     height: 35px;
     width: 95%; }
