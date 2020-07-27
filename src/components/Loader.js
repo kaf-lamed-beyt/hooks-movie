@@ -33,11 +33,11 @@ const Loader = styled.div`
 
   @keyframes down {
     0% {
-      transform: translateY(-100px);
+      transform: translateY(-40px);
       opacity: 0.4;
     }
     100% {
-      transform: translateY(0px);
+      transform: translateY(50px);
       opacity: 1;
     }
   }

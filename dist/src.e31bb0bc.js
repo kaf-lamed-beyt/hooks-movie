@@ -31758,7 +31758,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  margin-top: 2.5%;\n  animation: down 2s ease forwards;\n  opacity: 0;\n  margin: 0 auto;\n\n  .ball {\n    width: 16px;\n    height: 16px;\n    background: #00203fff;\n    border-radius: 50%;\n    animation: oscillate 0.8s ease infinite;\n  }\n\n  .zero {\n    animation-delay: 0.1s;\n  }\n\n  .one {\n    animation-delay: 0.2s;\n    margin-left: 6px;\n  }\n\n  .two {\n    animation-delay: 0.3s;\n    margin-left: 6px;\n  }\n\n  @keyframes down {\n    0% {\n      transform: translateY(-100px);\n      opacity: 0.4;\n    }\n    100% {\n      transform: translateY(0px);\n      opacity: 1;\n    }\n  }\n\n  @keyframes oscillate {\n    0% {\n      transform: translateY(0px);\n    }\n    50% {\n      transform: translateY(15px);\n    }\n    100% {\n      transform: translateY(12px);\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  margin-top: 2.5%;\n  animation: down 2s ease forwards;\n  opacity: 0;\n  margin: 0 auto;\n\n  .ball {\n    width: 16px;\n    height: 16px;\n    background: #00203fff;\n    border-radius: 50%;\n    animation: oscillate 0.8s ease infinite;\n  }\n\n  .zero {\n    animation-delay: 0.1s;\n  }\n\n  .one {\n    animation-delay: 0.2s;\n    margin-left: 6px;\n  }\n\n  .two {\n    animation-delay: 0.3s;\n    margin-left: 6px;\n  }\n\n  @keyframes down {\n    0% {\n      transform: translateY(-40px);\n      opacity: 0.4;\n    }\n    100% {\n      transform: translateY(50px);\n      opacity: 1;\n    }\n  }\n\n  @keyframes oscillate {\n    0% {\n      transform: translateY(0px);\n    }\n    50% {\n      transform: translateY(15px);\n    }\n    100% {\n      transform: translateY(12px);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -31921,7 +31921,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42651" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37985" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
