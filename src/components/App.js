@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import Movies from './Movies'
 import Search from './Search'
+import Loader from './Loader'
 
 // The Omdb movie API
 const movie_API_Endpoint = 'https://www.omdbapi.com/?s=man&apikey=4a3b711b'
@@ -45,7 +46,7 @@ export default function App() {
             </div>
             <div className="movies">
                 {loader && !errMessage ? (
-                    <span>loading...</span>
+                    <Loader />
                 ) : errMessage ? (
                     <div className="errMessage">{errMessage}</div>
                 ) : (

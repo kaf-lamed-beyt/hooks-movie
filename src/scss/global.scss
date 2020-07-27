@@ -63,6 +63,14 @@ body {
     padding: 1.5em 3.5em;
 }
 
+.movie__base {
+    &:hover {
+        transform: scale3d(.8, .8, .8);
+        transition: all .7s ease-in-out;
+        cursor: pointer;
+    }
+}
+
 .movie__img__desc img {
     width: 100%;
     height: 285px;
