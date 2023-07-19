@@ -25,7 +25,7 @@ export default function App() {
         setLoader(true)
         setErrMessage(null)
 
-        fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=4a3b711b`)
+        fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=${process.env.NEXT_PUBLIC_KEY}`)
             .then((response) => response.json())
             .then((jsonResponse) => {
                 if (jsonResponse.Response === 'True') {
