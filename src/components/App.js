@@ -7,6 +7,9 @@ import Loader from './Loader'
 // The Omdb movie API
 const movie_API_Endpoint = 'https://www.omdbapi.com/?s=man&apikey=4a3b711b'
 
+const SECRET_KEY =
+    'django-insecure-=+4zjy^)q6u=!6*wa^ai=1^%z3wa5&$pd(w)o17mbafhqx@iyp'
+
 export default function App() {
     const [movies, setMovies] = useState([])
     const [errMessage, setErrMessage] = useState(null)
@@ -25,7 +28,9 @@ export default function App() {
         setLoader(true)
         setErrMessage(null)
 
-        fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=${process.env.NEXT_PUBLIC_KEY}`)
+        fetch(
+            `https://www.omdbapi.com/?s=${searchKeyword}&apikey=${process.env.NEXT_PUBLIC_KEY}`
+        )
             .then((response) => response.json())
             .then((jsonResponse) => {
                 if (jsonResponse.Response === 'True') {
