@@ -8,7 +8,7 @@ import Loader from './Loader'
 const movie_API_Endpoint = 'https://www.omdbapi.com/?s=man&apikey=4a3b711b'
 
 const SECRET_KEY =
-    'django-insecure-=+4zjy^)q6u=!6*wa^ai=1^%z3wa5&$pd(w)o17mbafhqx@iyp3'
+    'django-insecure-=+4zjy^)q6u=!6*wa^ai=1^%z3wa5&$pd(w)o17mbafhqx@iyp'
 
 export default function App() {
     const [movies, setMovies] = useState([])
